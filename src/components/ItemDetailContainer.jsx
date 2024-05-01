@@ -1,9 +1,9 @@
 import { useEffect, useState } from "react"
 import arrayProductos from "./json/productos.json"
-import ItemList from "./ItemList"
+import ItemDetail from "./ItemDetail"
 
-const ItemListContainer = () =>{
-    const [items, setItems] = useState([])
+const ItemDetailContainer = () =>{
+    const [item, setItem] = useState([])
 
 
     useEffect(() =>{
@@ -13,7 +13,7 @@ const ItemListContainer = () =>{
             }, 2000)
         })
         promesa.then(respuesta => {
-            setItems(respuesta)
+            setItem(respuesta)
         })
 
 
@@ -24,7 +24,7 @@ const ItemListContainer = () =>{
         <>
             <div className="container">
                 <div className="row m-4 text-center">
-                    <ItemList items={items} />
+                    <ItemDetail item={item} />
                 </div>
             </div>
         
@@ -32,4 +32,4 @@ const ItemListContainer = () =>{
     )
 }
 
-export default ItemListContainer
+export default ItemDetailContainer
