@@ -1,3 +1,4 @@
+import { Link, NavLink } from 'react-router-dom'
 import Brand from '../assets/images/modarural.png'
 import CartWidget from './CartWidget'
 const NavBar = () => {
@@ -6,29 +7,25 @@ const NavBar = () => {
             <div className='container-fluid'>
                 <div className='row bg-dark text-center text-white p-2'>
                     <div className="col text-center">
-                        <a className="navbar-brand" href="#">
+                        <Link className="navbar-brand" to={"/"}>
                             <img src={Brand} alt="Logo" width="250"></img>
-                        </a>
+                        </Link>
                     </div>
                     <div className='container-fluid p-2'>
                         <div className='row bg-dark text-center text-white'>
                             <div className='col'>
                                 <ul className="nav justify-content-center">
                                     <li className="nav-item">
-                                        <a className="nav-link active" aria-current="page" href="#">Inicio</a>
+                                        <NavLink className="nav-link active" aria-current="page" to={"/"}>Inicio</NavLink>
                                     </li>
                                     <li className="nav-item">
-                                        <a className="nav-link" href="#">Contacto</a>
+                                        <NavLink className="nav-link" to={"/category/montura"}>Montura</NavLink>
                                     </li>
-                                    <li class="nav-item dropdown">
-                                        <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                            Catálogo
-                                        </a>
-                                        <ul class="dropdown-menu">
-                                            <li><a class="dropdown-item" href="#">Ropa</a></li>
-                                            <li><a class="dropdown-item" href="#">Calzado</a></li>
-                                            <li><a class="dropdown-item" href="#">Sombreros</a></li>
-                                        </ul>
+                                    <li className="nav-item">
+                                        <NavLink className="nav-link" to={"/category/vestimenta"}>Vestimenta</NavLink>
+                                    </li>
+                                    <li className="nav-item">
+                                        <NavLink className="nav-link" to={"/category/herramientas"}>Herramientas</NavLink>
                                     </li>
                                 </ul>
                             </div>
